@@ -144,7 +144,11 @@ throws IOException {
 	}
 	for (GHUser f : toRemove) {
 		System.out.println("Removing " + f.getLogin() + " from " + dest.getName());
+		try{
 		dest.remove(f);
+		}catch(Exception ex){
+			ex.printStackTrace()
+		}
 	}
 }
 
